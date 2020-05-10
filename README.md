@@ -9,14 +9,15 @@ Please have [Docker](https://www.docker.com/products/docker-desktop)  and [docke
 This is a first-time setup step.
 
 On the first run of the application we need to run the migrations to populate the database structure.
-As the other containers are missing they will be built/downloaded prior to running the command.
-
-So this basically also calls docker-compose pull and docker-compose build prior to building.
-
 
 ```
 docker-compose run console django-admin migrate
 ```
+
+As the other containers are missing they will be built/downloaded prior to running the command.
+
+So this basically also calls docker-compose pull and docker-compose build prior to building.
+
 
 ## Startup the project
 
