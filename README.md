@@ -1,5 +1,5 @@
 # django-polls-app
-Working on a Polls app with the SIIT team
+Working on a [Polls](https://docs.djangoproject.com/en/3.0/intro/tutorial01/) app with the SIIT team
 
 # Local setup
 ## System requirements
