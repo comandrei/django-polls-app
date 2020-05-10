@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+    db:
+        image: postgres:12.2
+        env_file: .env
+    console:
+        build: .
+        links:
+            - db
