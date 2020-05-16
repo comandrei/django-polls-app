@@ -3,6 +3,8 @@ services:
     db:
         image: postgres:12.2
         env_file: .env
+        volumes:
+            - .:/polls:/var/lib/db
     console:
         build: .
         volumes:
