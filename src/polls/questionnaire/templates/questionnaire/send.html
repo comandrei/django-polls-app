@@ -1,0 +1,24 @@
+{% extends 'base.html' %}}
+
+{% block title %}Questionnaire{% endblock %}
+
+{% block content %}
+    <h1>Questinnaire: </h1>
+    <form method="post">
+        {% for questionnaire_question in questionnaire_questions %}
+            <p>{{questionnaire_question.question}}</p>
+             {% for choice in questionnaire_question.question.questionschoices_set.all %}
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" class="custom-control-input" id="{{choice.id}}" name="{{questionnaire_question.question.id}}" value="{{choice.id}}">
+                  <label class="custom-control-label mb-4" for="{{choice.id}}">{{choice.text}}</label>
+                </div>
+             {% endfor %}
+        {% endfor %}
+        {% csrf_token %}
+        <div class="form-group row mt-3">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
