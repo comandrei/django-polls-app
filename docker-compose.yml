@@ -3,6 +3,8 @@ services:
     db:
         image: postgres:12.2
         env_file: .env
+        volumes:
+            - data-db:/var/lib/db
     console:
         build: .
         volumes:
@@ -15,3 +17,5 @@ services:
             - db
         depends_on:
             - db
+volumes:
+    data-db:
