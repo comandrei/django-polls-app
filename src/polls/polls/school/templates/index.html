@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Lista cursuri {{ block.super }} {% endblock %}
+{% block continut %}
+{{ block.super }}
+Salut {{ nume }} <br />
+<ul>
+{% for course in courses %}
+<li style="color: {%cycle 'red' 'black' 'green' %}">
+    {{ course }} {% if course.title|length > 1 %} ceva {% else %} altceva {{ course|length }} {% endif %}
+    </li>
+{% empty %} 
+    Sorry, n-avem
+{% endfor %}
+{% if courses|length > 5 %}
+    Avem mai ult de 5 cursuri
+{% else %}
+    Mai putin de 5 cursuri
+{% endif %}
+</ul>
+
+
+<br />
+{{ title|upper }}
+
+{% include 'includes/snippet.html' %}
+{% endblock %}
