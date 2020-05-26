@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block continut %}
+<ol>
+{% for student in students %}
+   <li> <a href="{% url 'carnet-note' student.pk %}"> {{ student }} </a> </li>
+{% endfor %}
+</ol>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Carnetul de note pentru {{ student }} {% endblock %}
+{% block continut %}
+ Student: {{ student }}
+ <ol>
+     {% for course in student.courses.all %}
+      <li> {{ course }} </li>
+     {% endfor %}
+ </ol>
+{% endblock %}
