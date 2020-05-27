@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <body>
+        <!-- form method="POST" action="form">
+            {% csrf_token %} 
+            <input type="text" name="username" />
+            <input type="submit" value="Login" />
+        </form -->
+        {% if form.errors %}
+        <h1> erori</h1>
+        {{ form.errors }}
+        {% endif %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="Salvare" />
+        </form>
+    </body>
+</html>

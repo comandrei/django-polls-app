@@ -54,3 +54,20 @@ class Student(TimeTrackerModel):
 
 # update courses set an = an + 1 
 
+FUNCTII = (1, 'Director',
+           2, 'Presedinte',
+           3, 'Administrator')
+
+class Reprezentant(models.Model):
+    nume = models.CharField(max_length=255)
+    prenume = models.CharField(max_length=255)
+    email = models.EmailField()
+    telefon = models.IntegerField()
+    functie = models.IntegerField()
+
+class Client(models.Model):
+    nume = models.CharField(max_length=255)
+    adresa = models.CharField(max_length=255)
+    cui = models.IntegerField()
+    reprezentant = models.ForeignKey(Reprezentant, on_delete=models.CASCADE)
+

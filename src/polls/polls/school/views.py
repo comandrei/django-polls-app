@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-
-from .models import Courses, Student
+from django.shortcuts import render, get_object_or_404, redirect
+from .forms import ClientForm
+from .models import Courses, Student, Client
 # Create your views here.
 
 def index(request):
@@ -27,3 +27,15 @@ def carnet_note(request, cucu_student_id):
     }
     return render(request, 'carnet_note.html', context)
 
+def form_client(request, id=None):
+    instance = get_object_or_404(Client, pk=id) if id else None
+    if request.method == "POST":
+        # daca setam la instance ceva diferit de None, formularul va fi bound
+        form = ClientForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('/school')
+    else:
+        form = ClientForm(instance=instance)
+    context = {'form': form}
+    return render(request, 'form_render.html', context)
