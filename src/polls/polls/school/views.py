@@ -3,8 +3,11 @@ from .forms import ClientForm
 from .models import Courses, Student, Client
 
 from django.contrib.auth.decorators import login_required
+
+from django.views.decorators.cache import cache_page
 # Create your views here.
 
+@cache_page(30)
 def index(request):
     courses = Courses.objects.all()
     request.session['views'] = request.session.get('views', 0) + 1
