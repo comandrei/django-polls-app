@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ClientForm
 from .models import Courses, Student, Client
+
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -13,6 +15,7 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+@login_required
 def list_student(request):
     students = Student.objects.all()
     context = {
