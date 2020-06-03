@@ -2,7 +2,11 @@ from django.db import models
 
 
 class Question(models.Model):
-    text = models.CharField(max_length=250)
+    class Meta:
+        verbose_name = "Intrebare"
+        verbose_name_plural = "Intrebari"
+
+    text = models.CharField(max_length=250, help_text="Text la intrebare")
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
