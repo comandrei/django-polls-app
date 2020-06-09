@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'question',
     'questionnaire',
-    'website'
+    'website',
+    'rest_api'
+
 ]
 
 MIDDLEWARE = [
