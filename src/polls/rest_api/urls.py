@@ -5,6 +5,8 @@ from . import views
 router = routers.DefaultRouter()
 router.register('question', views.QuestionViewSet)
 router.register('choice', views.ChoiceViewSet)
+router.register('todos', views.ToDoViewSet)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

@@ -16,6 +16,7 @@ class App extends Component {
       },
       todoList: []
     };
+    axios.defaults.headers.common['Authorization'] = 'Token 05cc78078e8688db5554cc79f43f3d15395685e2'
   }
   componentDidMount() {
     this.refreshList();
