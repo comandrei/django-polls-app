@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.load_app),
+    path('contact/', views.contact)
 ]
