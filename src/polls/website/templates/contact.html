@@ -2,7 +2,7 @@
 {% block content %}
 {% if thank_you %}
  You message was sent! <br/>
- {{ thank_you|safe }}
+ {{ thank_you }}
 {% endif %}
 <form method="POST">
     {% csrf_token %}
